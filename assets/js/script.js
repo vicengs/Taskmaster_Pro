@@ -1,3 +1,10 @@
+/* ------------------------- */
+/* Project  : Taskmaster Pro */
+/* File     : script.js      */
+/* Author   : Vicente Garcia */
+/* Date     : 02/28/2022     */
+/* Modified : 02/28/2022     */
+/* ------------------------- */
 var tasks = {};
 
 var createTask = function(taskText, taskDate, taskList) {

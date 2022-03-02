@@ -52,8 +52,6 @@ var loadTasks = function() {
   }
   // loop over object properties
   $.each(tasks, function(list, arr) {
-    //console.log(list, arr);
-    console.log($);
     // then loop over sub-array
     arr.forEach(function(task) {
       createTask(task.text, task.date, list);
@@ -79,7 +77,6 @@ $(".list-group").on("click", "p", function(){
   $(this).replaceWith(textImput);
   // Focus on new element
   textImput.trigger("focus");
-  console.log(text);
 });
 
 // Function when blur update textarea
@@ -204,7 +201,6 @@ $(".card .list-group").sortable({
     // Update array on tasks object and save
     tasks[arrName] = tempArr;
     saveTasks();
-    console.log(tempArr);
   }
 });
 
@@ -271,3 +267,9 @@ $("#remove-tasks").on("click", function() {
 
 // load tasks for the first time
 loadTasks();
+// Refresh each interval of 30 mins
+setInterval(function(){
+  $(".card .list-group-item").each(function(index, el){
+    auditTask(el);
+  });
+}, 1800000);
